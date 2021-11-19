@@ -18,5 +18,14 @@
             "require": "./index.js",
             "import": "./index.mjs"
         }
+    },
+    "homepage": "https://github.com/initialing/parse-condition-string#readme.md",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/initialing/parse-condition-string.git"
+    },
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/initialing/parse-condition-string/issues"
     }
 }
