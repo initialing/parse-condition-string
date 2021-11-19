@@ -1,0 +1,22 @@
+{
+    "name": "parse-condition-string",
+    "version": "1.0.0",
+    "description": "A package about parse condition string to js condition",
+    "scripts": {
+        "test": "node ./test/test.js"
+    },
+    "author": "sczheng",
+    "keywords": [
+        "condition",
+        "parse",
+        "string",
+        "boolean"
+    ],
+    "main": "index.js",
+    "exports": {
+        ".": {
+            "require": "./index.js",
+            "import": "./index.mjs"
+        }
+    }
+}
