@@ -3,7 +3,9 @@
     "version": "1.0.1",
     "description": "A package about parse condition string to js condition",
     "scripts": {
-        "test": "node ./test/test.js"
+        "test": "node ./test/test.js",
+        "build": "rollup -c",
+        "build:script": "node ./script/build.js"
     },
     "author": "sczheng",
     "keywords": [
@@ -21,11 +23,15 @@
     },
     "homepage": "https://github.com/initialing/parse-condition-string#readme.md",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/initialing/parse-condition-string.git"
+        "type": "git",
+        "url": "git+https://github.com/initialing/parse-condition-string.git"
     },
     "license": "MIT",
     "bugs": {
-      "url": "https://github.com/initialing/parse-condition-string/issues"
+        "url": "https://github.com/initialing/parse-condition-string/issues"
+    },
+    "devDependencies": {
+        "rollup": "^2.60.1",
+        "rollup-plugin-commonjs": "^10.1.0"
     }
 }
