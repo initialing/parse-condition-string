@@ -15,6 +15,13 @@
         "boolean"
     ],
     "main": "index.js",
+    "files": [
+        "index.js",
+        "index.mjs",
+        "dist",
+        "src",
+        "lib"
+    ],
     "exports": {
         ".": {
             "require": "./index.js",
