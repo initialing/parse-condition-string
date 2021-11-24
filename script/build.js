@@ -1,5 +1,5 @@
 const rollup = require("rollup");
-const commonjs = require("rollup-plugin-commonjs");
+const commonjs = require("@rollup/plugin-commonjs");
 
 let inputCofing = {
     input: "index.js",

@@ -3,7 +3,7 @@
     "version": "1.0.1",
     "description": "A package about parse condition string to js condition",
     "scripts": {
-        "test": "node ./test/test.js",
+        "test": "jest --findRelatedTests test/test.js",
         "build": "rollup -c",
         "build:script": "node ./script/build.js"
     },
@@ -38,7 +38,8 @@
         "url": "https://github.com/initialing/parse-condition-string/issues"
     },
     "devDependencies": {
-        "rollup": "^2.60.1",
-        "rollup-plugin-commonjs": "^10.1.0"
+        "@rollup/plugin-commonjs": "^21.0.1",
+        "jest": "^27.3.1",
+        "rollup": "^2.60.1"
     }
 }

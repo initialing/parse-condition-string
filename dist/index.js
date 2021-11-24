@@ -4,35 +4,30 @@
     (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.condParse = factory());
 })(this, (function () { 'use strict';
 
-    var checkBoolenKey$1 = function(char){
+    var stringToArr = {};
+
+    var check = {};
+
+    check.checkBoolenKey = function(char){
         return char != "!" && char != "|" && char != "&";
     };
 
-    var checkOr$3 = function(str){
+    check.checkOr = function(str){
         return str === "||";
     };
 
-    var checkAnd$3 = function(str){
+    check.checkAnd = function(str){
         return str === "&&";
     };
 
-    var checkNot$1 = function(str){
+    check.checkNot = function(str){
         return /^\!{1,}$/.test(str);
     };
 
-    var check = {
-    	checkBoolenKey: checkBoolenKey$1,
-    	checkOr: checkOr$3,
-    	checkAnd: checkAnd$3,
-    	checkNot: checkNot$1
-    };
+    var error$1 = {};
 
-    var error_1 = function(msg){
+    error$1.error = function(msg){
         throw new Error(msg);
-    };
-
-    var error$1 = {
-    	error: error_1
     };
 
     const { checkBoolenKey, checkAnd: checkAnd$2, checkOr: checkOr$2 } = check;
@@ -60,7 +55,7 @@
         nonius = 0;
         temp = "";
     };
-    var parseToArr$1 = function(str){
+    stringToArr.parseToArr = function(str){
         let res = [];
         stack.push(arr);
         while(str[nonius]){
@@ -105,9 +100,7 @@
         return res;
     };
 
-    var stringToArr = {
-    	parseToArr: parseToArr$1
-    };
+    var arrToCond = {};
 
     const { checkAnd: checkAnd$1, checkOr: checkOr$1, checkNot } = check;
 
@@ -207,11 +200,9 @@
         return r;
     };
 
-    var toCond_1 = toCond$1;
+    arrToCond.toCond = toCond$1;
 
-    var arrToCond = {
-    	toCond: toCond_1
-    };
+    var setPriority$2 = {};
 
     const { checkAnd, checkOr } = check;
 
@@ -253,15 +244,11 @@
         return arr;
     };
 
-    var setPriority_2 = setPriority$1;
-
-    var setPriority_1 = {
-    	setPriority: setPriority_2
-    };
+    setPriority$2.setPriority = setPriority$1;
 
     const { parseToArr } = stringToArr;
     const { toCond } = arrToCond;
-    const { setPriority } = setPriority_1;
+    const { setPriority } = setPriority$2;
 
     const condParse = function(str, obj){
         let arr = parseToArr(str);
