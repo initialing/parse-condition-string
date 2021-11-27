@@ -1,6 +1,6 @@
 {
     "name": "parse-condition-string",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "A package about parse condition string to js condition",
     "scripts": {
         "test": "jest --findRelatedTests test/test.js",
@@ -15,7 +15,9 @@
         "boolean"
     ],
     "main": "index.js",
+    "types": "index.d.ts",
     "files": [
+        "index.d.ts",
         "index.js",
         "index.mjs",
         "dist",
