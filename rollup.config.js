@@ -1,13 +1,20 @@
-import commonjs from "@rollup/plugin-commonjs"
+import commonjs from "@rollup/plugin-commonjs";
+import typescript from "@rollup/plugin-typescript";
 
 export default {
-    input: "index.js",
+    input: "./src/index.ts",
     plugins: [
-        commonjs()
+        typescript({
+            module: "ESNext",
+        }),
+        commonjs({
+            extensions: [".js", ".ts"],
+            defaultIsModuleExports: false,
+        }),
     ],
     output: {
         file: "dist/index.js",
-        format: "umd",
-        name: "condParse"
-    }
-}
+        format: "cjs",
+        name: "condParse",
+    },
+};

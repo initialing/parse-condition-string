@@ -1,1 +1,2 @@
-export * from "./index.js";
+import CondParse from "./dist/cond.mjs";
+export default CondParse;

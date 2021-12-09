@@ -21,7 +21,9 @@ to real javaScript conditions.
 import package
 
 ```javaScript
-const condParse = require("parse-condition-string");
+const condParse = require("parse-condition-string"); // commonjs
+import condParse from "parse-condition-string"; // esmodule
+import condParse from "parse-condition-string"; // typescript
 ```
 
 use

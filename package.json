@@ -1,11 +1,16 @@
 {
     "name": "parse-condition-string",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "A package about parse condition string to js condition",
     "scripts": {
-        "test": "jest --findRelatedTests test/test.js",
+        "test": "jest",
         "build": "rollup -c",
-        "build:script": "node ./script/build.js"
+        "build:script": "node ./script/build.js",
+        "build:ts": "ts-node ./script/build.ts",
+        "check": "eslint ./src/index.ts",
+        "init:eslint": "eslint --init",
+        "tstest": "ts-node ./test/test.ts",
+        "tts": "ts-node ./t.ts"
     },
     "author": "sczheng",
     "keywords": [
@@ -20,9 +25,7 @@
         "index.d.ts",
         "index.js",
         "index.mjs",
-        "dist",
-        "src",
-        "lib"
+        "dist"
     ],
     "exports": {
         ".": {
@@ -41,7 +44,19 @@
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^21.0.1",
+        "@rollup/plugin-typescript": "^8.3.0",
+        "@types/jest": "^27.0.3",
+        "@types/node": "^16.11.12",
+        "@typescript-eslint/eslint-plugin": "^5.6.0",
+        "@typescript-eslint/parser": "^5.6.0",
+        "eslint": "^8.4.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
         "jest": "^27.3.1",
-        "rollup": "^2.60.1"
+        "prettier": "^2.5.1",
+        "rollup": "^2.60.1",
+        "ts-jest": "^27.1.1",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.2"
     }
 }

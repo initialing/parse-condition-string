@@ -1,0 +1,16 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.probe": [
+        "javascript",
+        "typescript",
+        "markdown"
+    ],
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "markdown"
+    ],
+}
