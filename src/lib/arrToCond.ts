@@ -17,7 +17,7 @@ const trans = function (
     } else if (!con) {
         return obj[curr];
     }
-    let res = pre;
+    let res: boolean = pre;
     switch (con) {
         case "||": {
             if (not) {
@@ -50,11 +50,11 @@ const trans = function (
     return res;
 };
 
-const checkNotNum = function (i: string) {
+const checkNotNum = function (i: string): number {
     return (i.length % 2) + 1;
 };
 
-const toCond = function (arr: CondArray, obj: any) {
+const toCond = function (arr: CondArray, obj: any): boolean {
     let tempCond: LogicStr = "";
     let not: number = 0;
     let r: boolean = null;

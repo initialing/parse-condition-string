@@ -2,28 +2,28 @@ import { checkAnd, checkOr } from "../utils/check";
 import { CondArray } from "../utils/types";
 
 const setPriority = function (arr: CondArray): CondArray {
-    const stack: CondArray = [];
+    const stack: Array<CondArray> = [];
     let first: boolean = true;
     while (1) {
-        let tempArr;
+        let tempArr: CondArray;
         if (stack.length > 0) {
             tempArr = stack.shift();
         } else if (first) {
             first = false;
             tempArr = arr;
         }
-        let slow = 0;
-        let fast = 0;
-        let pri = false;
+        let slow: number = 0;
+        let fast: number = 0;
+        let pri: boolean = false;
         let temp = [];
         while (tempArr[fast]) {
             if (tempArr[fast] instanceof Array) {
-                stack.push(tempArr[fast]);
+                stack.push(tempArr[fast] as CondArray);
                 fast++;
-            } else if (checkAnd(tempArr[fast])) {
+            } else if (checkAnd(tempArr[fast] as string)) {
                 pri = true;
                 fast++;
-            } else if (checkOr(tempArr[fast])) {
+            } else if (checkOr(tempArr[fast] as string)) {
                 if (pri) {
                     temp = tempArr.splice(slow, fast - 1);
                     tempArr.splice(slow, 0, temp);
